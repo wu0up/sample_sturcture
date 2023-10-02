@@ -1,0 +1,44 @@
+definitions:
+  dto.GetServiceTypeDto:
+    properties:
+      serviceType:
+        type: string
+    type: object
+externalDocs:
+  description: OpenAPI
+  url: https://swagger.io/resources/open-api/
+host: localhost:8000
+info:
+  contact:
+    email: support@swagger.io datafabric
+    name: API Support datafabric
+    url: http://www.swagger.io/support.datafabric
+  description: datafabricThis is a sample server celler server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/datafabric
+  title: Swagger datafabric API
+  version: "1.0"
+paths:
+  /api/sensorConfig/serviceType:
+    get:
+      consumes:
+      - application/json
+      description: Get service type
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success
+          schema:
+            items:
+              $ref: '#/definitions/dto.GetServiceTypeDto'
+            type: array
+      summary: Get service type
+      tags:
+      - sensorConfig
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"
